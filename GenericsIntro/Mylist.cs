@@ -4,32 +4,35 @@ using System.Text;
 
 namespace GenericsIntro
 {
-    class Mylist <T>
+    class Mylist <T>  // T belirlenen bir Tip olacak 
     {
         T[] items;
-
-        //ctor 2xtab asagidaki "Constructor" yapisini getirir. 
-        public Mylist() 
+        public Mylist()  //ctor 2xtab asagidaki "Constructor" yapisini getirir. 
         {
-            items = new T[0];    
+            items = new T[0];   // bu komutla klass hemen calismaya baslar ve 0 elemanli bir dizi olusur
         }
-        // degiskenin tipi T seklinde tanimlandi. Bu herhangi bir degisken olabilir. bu klass cagrilirken belirlenir
-
-        public void Add (T item) 
+        
+        public void Add (T item) // burada bir diziye ekleme yapiyoruz
         {
-            // gecici dizinin referansini itemin referansina atadim ki kaybolmasin
-            T[] tempArray = items;
-
-            //items listesinin genisligini +1 yapiyorum
+            T[] tempArray = items;  // gecici dizinin referansini itemin referansina atadim ki kaybolmasin
+            
             //burada yeni bir referans numarasiyla eleman sayisi 1 fazla liste olustu        
-            items = new T[items.Length +1];
+            items = new T[items.Length +1]; //items listesinin genisligini +1 yapiyorum (1 artiriyorum)
             // eskiden var olan elemanlari  eleman sayisi 1 artmis olan yeni diziye aliyoruz
-            for(int i = 0); i < tempArray.Length; i++)
+            for(int i = 0; i < tempArray.Length; i++)
             {
                 items[i] = tempArray[i];
-            }
-            // simdi listenin en sonuna istenen bilgiyi ekliyoruz
-            items[items.Length - 1] = item;
+            }   
+            items[items.Length - 1] = item; // simdi listenin en sonuna istenen bilgiyi ekliyoruz
+        }
+
+        public int Length
+        {
+            get { return items.Length; }
+        }
+        public T[] Items
+        {
+            get { return items; }
         }
     }
 }

@@ -8,10 +8,16 @@ namespace GenericsIntro
         {
             Mylist<string> isimler = new Mylist<string>();
             isimler.Add("Engin");
-            Console.WriteLine("devreler yanar");
+            Console.WriteLine("Liste Uzunlugu :"+ isimler.Length);
 
+            isimler.Add("Kerem");
+            Console.WriteLine("Liste Uzunlugu: " + isimler.Length);
 
+            foreach (var isim in isimler.Items)  // isimler dizisindeki tanimli eleman sayisi "isimler.items"dir
+            {
+                Console.WriteLine(isim);
+            }
 
-         }
+        }
     }
 }
