@@ -8,7 +8,7 @@ namespace OOP3
         static void Main(string[] args)
         {
 
-            //*****************Konu ADI g : INTERFACE*****************
+            //*****************Konu ADI fgjjbhjhjf : INTERFACE*****************
 
             //her tipte bir degisken tanimlandi
             IKrediManager ihtiyacKrediManager = new IhtiyacKrediManager();
